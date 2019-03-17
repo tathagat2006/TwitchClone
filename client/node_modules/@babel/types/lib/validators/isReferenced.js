@@ -33,6 +33,7 @@ function isReferenced(node, parent) {
     case "ClassProperty":
     case "ClassPrivateProperty":
     case "ClassMethod":
+    case "ClassPrivateMethod":
     case "ObjectMethod":
       if (parent.key === node) {
         return !!parent.computed;
