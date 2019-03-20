@@ -1,11 +1,10 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Link } from "react-router-dom";
 
 const PageOne = () => {
   return (
     <div>
-      Page 1 BAD!!!
-      <a href="/pagetwo">Move to page 2</a>
+      Page 1<Link to="/pagetwo">Move to page 2</Link>
     </div>
   );
 };
@@ -13,8 +12,7 @@ const PageOne = () => {
 const PageTwo = () => {
   return (
     <div>
-      Page 2 BAD!!!
-      <a href="/">Move to page 1</a>
+      Page 2<Link to="/">Move to page 1</Link>
     </div>
   );
 };
@@ -31,5 +29,7 @@ const App = () => {
     </div>
   );
 };
+
+//concept of single page app means using link tags i.e. not loading the whole page again... look at the network req tab for more info.
 
 export default App;
