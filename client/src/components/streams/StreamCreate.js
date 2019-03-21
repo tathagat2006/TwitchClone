@@ -11,6 +11,7 @@ class StreamCreate extends React.Component {
         <input
           onChange={formProps.input.onChange}
           value={formProps.input.value}
+          autoComplete="off"
         />
         <div style={{ color: "red" }}>{formProps.meta.error}</div>
       </div>
