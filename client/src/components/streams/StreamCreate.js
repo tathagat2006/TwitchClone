@@ -4,6 +4,7 @@ import { Field, reduxForm } from "redux-form";
 class StreamCreate extends React.Component {
   renderInput = formProps => {
     // console.log(formProps);
+    // console.log(formProps.meta);
     return (
       <div className="field">
         <label>{formProps.label}</label>
@@ -11,6 +12,7 @@ class StreamCreate extends React.Component {
           onChange={formProps.input.onChange}
           value={formProps.input.value}
         />
+        <div style={{ color: "red" }}>{formProps.meta.error}</div>
       </div>
     );
   };
@@ -51,5 +53,6 @@ const validate = formValues => {
 };
 
 export default reduxForm({
-  form: "streamCreate"
+  form: "streamCreate",
+  validate: validate
 })(StreamCreate);
