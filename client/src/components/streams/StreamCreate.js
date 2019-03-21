@@ -3,7 +3,7 @@ import { Field, reduxForm } from "redux-form";
 
 class StreamCreate extends React.Component {
   renderError = ({ error, touched }) => {
-    if (touched && error) {
+    if (!touched && error) {
       return (
         <div className="ui error message">
           <div className="header">{error}</div>
@@ -14,7 +14,7 @@ class StreamCreate extends React.Component {
 
   renderInput = formProps => {
     // console.log(formProps);
-    console.log(formProps.meta);
+    console.log(formProps.meta.touched);
     return (
       <div className="field">
         <label>{formProps.label}</label>
