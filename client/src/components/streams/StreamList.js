@@ -33,12 +33,19 @@ class StreamList extends React.Component {
     });
   };
 
+  renderCreate = () => {
+    if (this.props.currentUserId !== null) {
+      return <button className="ui primary button">Create Stream</button>;
+    }
+  };
+
   render() {
     // console.log(this.props.streams);
     return (
       <div>
         <h2>Streams</h2>
         <div className="ui celled list">{this.renderList()}</div>
+        <div>{this.renderCreate()}</div>
       </div>
     );
   }
